@@ -41,13 +41,13 @@ app.get('/users', (request, response) => {
     return response.json(users) // para retornar todos os usuários criados
 })
 
-app.post('/users', (request, response) => { // adicionando usuários
+app.post('/users', (request, response) => { 
     const { name, age } = request.body
 
     const user = { id: uuid.v4(), name, age }
 
-    users.push(user) //adicionando uma informação dentro do meu array users
-    return response.status(201).json(users) // status 201 é de usuário criado
+    users.push(user) 
+    return response.status(201).json(user) 
 })
 
 app.put('/users/:id', checkUserId, (request, response) => {
